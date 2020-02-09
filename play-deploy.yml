@@ -1,0 +1,10 @@
+---
+- name: first play
+  hosts: myhost
+  become: true
+  vars:
+    - play_var: hello
+  vars_files:
+# - gce_vars/auth
+  roles:
+    - role: role-deploy

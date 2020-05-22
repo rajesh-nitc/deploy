@@ -1,6 +1,6 @@
 ## deploy
 
-### prerequiste
+### prerequisite
 
 ```
 pip3 install ansible

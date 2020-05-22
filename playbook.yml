@@ -1,0 +1,8 @@
+---
+- name: first play
+  hosts: dev
+  become: true
+  vars:
+    - from_playbook: hello
+  roles:
+    - role: deploy

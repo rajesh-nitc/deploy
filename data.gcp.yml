@@ -3,15 +3,10 @@ projects:
   - tf-first-project
 regions:
   - asia-south1
-hostnames:
-  - name
-filters: []
 auth_kind: serviceaccount
-service_account_file: /home/rajesh_debian/.config/gcloud/tf-sa.json
+service_account_file: ansible-sa.json
 keyed_groups:
   - key: labels
     prefix: gcp
-# groups:
-#   team1: "'instance' in name"
-# compose:
-#   ansible_host: networkInterfaces[0].accessConfigs.natIP
+compose:
+  ansible_host: networkInterfaces[0].accessConfigs[0].natIP

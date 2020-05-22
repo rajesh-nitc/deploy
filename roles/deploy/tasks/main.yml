@@ -1,0 +1,2 @@
+---
+- debug: msg="Inside role-deploy..... {{ from_playbook }} {{ from_group_var }}"

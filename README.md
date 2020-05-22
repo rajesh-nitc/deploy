@@ -6,6 +6,7 @@
 pip3 install ansible
 pip3 install requests google-auth
 ```
+create instances on gcp and attach a label env=dev
 ### get dynamic inventory from cloud
 ```
 ansible-inventory -i data.gcp.yml --output dynamic-ini --list

@@ -3,10 +3,13 @@
 ### prerequisite
 
 ```
-pip3 install ansible
-pip3 install requests google-auth
+pip3 install ansible requests google-auth ansible-lint
 ```
 create instances on gcp and attach a label env=dev
+### validate playbook and roles
+```
+ansible-lint -v playbook.yml
+```
 ### get dynamic inventory from cloud
 ```
 ansible-inventory -i data.gcp.yml --output dynamic-ini --list

@@ -6,7 +6,7 @@
 pip3 install ansible requests google-auth ansible-lint
 ```
 create instances on gcp and attach a label env=dev
-### validate playbook and roles
+### validate templates
 ```
 ansible-lint -v playbook.yml
 ```
@@ -14,7 +14,7 @@ ansible-lint -v playbook.yml
 ```
 ansible-inventory -i data.gcp.yml --output dynamic-ini --list
 ```
-### build inventory file for dev
+### build inventory file for dev at runtime
 ```
 echo "[dev]" > dev/ini
 cat dynamic-ini | jq -r '.gcp_env_dev.hosts[]' >> dev/ini

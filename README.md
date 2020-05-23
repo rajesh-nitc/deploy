@@ -6,7 +6,7 @@
 pip3 install ansible requests google-auth ansible-lint
 ```
 create instances on gcp and attach a label env=dev
-### validate templates
+### validate playbook and roles
 ```
 ansible-lint -v playbook.yml
 ```

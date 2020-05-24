@@ -1,25 +1,28 @@
-## deploy
-
-### prerequisite
-
+# Deploy
+To deploy on VMs
+## Prerequisites
 ```
 pip3 install ansible requests google-auth ansible-lint
 ```
-create instances on gcp and attach a label env=dev
-### validate playbook and roles
+## Getting Started
+Create instances on gcp and attach a label env=dev
+### Validate
+Validate ansible playbook and roles
 ```
 ansible-lint -v playbook.yml
 ```
-### get dynamic inventory from cloud
+### Get cloud inventory
+Get gcp cloud inventory using the ansible plugin
 ```
 ansible-inventory -i data.gcp.yml --output dynamic-ini --list
 ```
-### create inventory file for dev
+### Create inventory file
+Create inventory file for dev environment at run time
 ```
 echo "[dev]" > dev/ini
 cat dynamic-ini | jq -r '.gcp_env_dev.hosts[]' >> dev/ini
 ```
-### run playbook
+### Run playbook
 ```
 ansible-playbook -i dev/ini playbook.yml
 ```

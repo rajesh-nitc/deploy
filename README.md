@@ -11,18 +11,18 @@ Validate ansible playbook and roles
 ```
 ansible-lint -v playbook.yml
 ```
-### Get inventory
+### Get Inventory
 Get gcp cloud inventory using the ansible plugin
 ```
 ansible-inventory -i data.gcp.yml --output dynamic-ini --list
 ```
-### Create inventory
+### Create Inventory
 Create inventory file for dev environment at run time
 ```
 echo "[dev]" > dev/ini
 cat dynamic-ini | jq -r '.gcp_env_dev.hosts[]' >> dev/ini
 ```
-### Run playbook
+### Run Playbook
 ```
 ansible-playbook -i dev/ini playbook.yml
 ```
